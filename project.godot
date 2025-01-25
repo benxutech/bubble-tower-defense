@@ -23,6 +23,8 @@ GlobalSignal="*res://Scenes/Main/global_signal.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=608
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 
