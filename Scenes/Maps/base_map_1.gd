@@ -6,7 +6,7 @@ var is_game_over = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignal.damage_taken.connect(on_damage_taken)
-	$SpawnerPath/SpawnTimer.start()
+	GlobalSignal.change_spawner_status.emit(true)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -23,6 +23,7 @@ func place_tower(position: Vector2) -> void:
 	var tower = towerScene.instantiate()
 	
 	tower.position = position
+	tower.place()
 	add_child(tower)
 
 func on_damage_taken(damage_point: int) -> void:
@@ -37,4 +38,4 @@ func on_damage_taken(damage_point: int) -> void:
 		is_game_over = true
 
 func finish_map() -> void:
-	$SpawnerPath/SpawnTimer.stop()
+	GlobalSignal.change_spawner_status.emit(false)

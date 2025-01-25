@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctt8x6tspnqly"]
+[gd_scene load_steps=2 format=3 uid="uid://ctt8x6tspnqly"]
 
 [ext_resource type="Script" path="res://Scenes/Spawner/spawner_path.gd" id="1_m8tbs"]
 
-[sub_resource type="Curve2D" id="Curve2D_n7p8r"]
-
-[node name="SpawnerPath" type="Path2D"]
-curve = SubResource("Curve2D_n7p8r")
+[node name="SpawnerPath" type="PathFollow2D"]
 script = ExtResource("1_m8tbs")
 
 [node name="SpawnTimer" type="Timer" parent="."]
