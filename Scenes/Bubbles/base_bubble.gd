@@ -29,14 +29,18 @@ func _process(delta: float) -> void:
 
 # Destroys the bubble
 func pop() -> void:
-	speed = 0
-	is_destroyed = true
-	$BubbleSprite.play("pop")
+	if not is_destroyed:
+		speed = 0
+		is_destroyed = true
+		$BubbleSprite.play("pop")
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:
 		queue_free()
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	pop()
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	## TODO: Left and Right click works...
+	if event is InputEventMouseButton && event.is_pressed():
+		print(event)
+		pop()

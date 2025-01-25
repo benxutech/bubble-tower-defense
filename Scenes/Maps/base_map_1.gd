@@ -9,7 +9,8 @@ func _ready() -> void:
 	GlobalSignal.change_spawner_status.emit(true)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	# TODO: remove false
+	if false && event is InputEventMouseButton:
 		if event.is_pressed():
 			place_tower(event.position)
 
