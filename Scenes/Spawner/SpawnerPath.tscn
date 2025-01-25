@@ -3,10 +3,6 @@
 [ext_resource type="Script" path="res://Scenes/Spawner/spawner_path.gd" id="1_m8tbs"]
 
 [sub_resource type="Curve2D" id="Curve2D_n7p8r"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 232, 224, 0, 0, 0, 0, 760, 336, 0, 0, 0, 0, 688, 560, 0, 0, 0, 0, 320, 464, 0, 0, 0, 0, 792, 144, 0, 0, 0, 0, 1000, 400, 0, 0, 0, 0, 1120, 48, 0, 0, 0, 0, 872, -24, 0, 0, 0, 0, 984, -304)
-}
-point_count = 9
 
 [node name="SpawnerPath" type="Path2D"]
 curve = SubResource("Curve2D_n7p8r")
