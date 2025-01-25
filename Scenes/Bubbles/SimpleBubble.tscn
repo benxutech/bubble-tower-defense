@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c710wv1aogclu"]
-
-[ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ibvuf"]
-
-[node name="SimpleBubble" type="PathFollow2D"]
-loop = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_ibvuf")
