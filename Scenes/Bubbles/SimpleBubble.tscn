@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://w4iwfip0y10u"]
 
-[ext_resource type="Texture2D" uid="uid://e6y2jlg8dloh" path="res://icon.svg" id="1_3sols"]
 [ext_resource type="Script" path="res://Scenes/Bubbles/simple_bubble.gd" id="1_mtabc"]
+[ext_resource type="SpriteFrames" uid="uid://bdckev3rhcwa1" path="res://Assets/Bubble/idle/bubble_idle.tres" id="2_g6o4e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvshx"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xylu4"]
+radius = 16.0
 
 [node name="SimpleBubble" type="RigidBody2D"]
 script = ExtResource("1_mtabc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(256, 256)
-shape = SubResource("RectangleShape2D_dvshx")
+shape = SubResource("CircleShape2D_xylu4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(256, 256)
-texture = ExtResource("1_3sols")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_g6o4e")
+frame_progress = 0.498057
