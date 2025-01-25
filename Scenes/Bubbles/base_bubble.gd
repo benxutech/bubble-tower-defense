@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-class_name SimpleBubble
+class_name BaseBubble
 
 var health = 1
 var speed = 0.1
