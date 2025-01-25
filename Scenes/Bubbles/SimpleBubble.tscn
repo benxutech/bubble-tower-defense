@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://fs7pk1fk3e2l"]
+[gd_scene load_steps=2 format=3 uid="uid://c710wv1aogclu"]
 
-[ext_resource type="SpriteFrames" path="res://Scenes/Bubbles/bubble.tres" id="2_ibvuf"]
+[ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ibvuf"]
 
 [node name="SimpleBubble" type="PathFollow2D"]
 loop = false
