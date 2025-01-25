@@ -52,6 +52,8 @@ wait_time = 0.5
 autostart = true
 
 [node name="ShadowSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1, 1.5)
 sprite_frames = SubResource("SpriteFrames_622ai")
 
 [node name="Area2D" type="Area2D" parent="."]
