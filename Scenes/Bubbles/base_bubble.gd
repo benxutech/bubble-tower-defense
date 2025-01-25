@@ -3,7 +3,7 @@ extends PathFollow2D
 class_name SimpleBubble
 
 var health = 1
-var speed = 0.2
+var speed = 0.1
 var is_destroyed := false
 var base_damage = 1
 
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 func pop() -> void:
 	speed = 0
 	is_destroyed = true
-	$AnimatedSprite2D.play("pop")
+	$BubbleSprite.play("pop")
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:
