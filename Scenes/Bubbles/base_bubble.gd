@@ -16,12 +16,11 @@ func finished_path():
 		return
 	is_destroyed = true
 	GlobalSignal.damage_taken.emit(base_damage)
-	queue_free()
+	pop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	progress_ratio += speed * delta
 	
 	if progress_ratio >= 1:
@@ -33,7 +32,6 @@ func pop() -> void:
 	speed = 0
 	is_destroyed = true
 	$AnimatedSprite2D.play("pop")
-	
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:

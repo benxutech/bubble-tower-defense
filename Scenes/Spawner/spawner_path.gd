@@ -10,8 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_spawn_timer_timeout() -> void:
-	var bubbleScene := preload("res://Scenes/Bubbles/SimpleBubble.tscn")
+	var bubbleScene := preload("res://Scenes/Bubbles/BaseBubble.tscn")
 	var bubble = bubbleScene.instantiate()
 	
 	add_child(bubble)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cgfk7mm6o4b"]
+
+[ext_resource type="Script" path="res://Scenes/Maps/base_map_1.gd" id="1_scobg"]
+[ext_resource type="PackedScene" uid="uid://ctt8x6tspnqly" path="res://Scenes/Spawner/SpawnerPath.tscn" id="2_vt0d2"]
+
+[node name="BaseMap" type="Node2D"]
+script = ExtResource("1_scobg")
+
+[node name="SpawnerPath" parent="." instance=ExtResource("2_vt0d2")]
