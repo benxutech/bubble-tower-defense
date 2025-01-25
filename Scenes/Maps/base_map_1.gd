@@ -8,6 +8,14 @@ func _ready() -> void:
 	GlobalSignal.damage_taken.connect(on_damage_taken)
 	$SpawnerPath/SpawnTimer.start()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var towerScene := preload("res://Scenes/Towers/BaseTower.tscn")
+			var tower = towerScene.instantiate()
+			
+			tower.position = event.position
+			add_child(tower)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
