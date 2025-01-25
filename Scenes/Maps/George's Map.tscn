@@ -1,7 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://qybgk14sq6qg"]
+[gd_scene load_steps=11 format=3 uid="uid://qybgk14sq6qg"]
 
-[ext_resource type="Script" path="res://Scenes/Maps/map_1.gd" id="1_vp2kv"]
-[ext_resource type="Script" path="res://Scenes/Maps/path_2d.gd" id="2_lcbas"]
 [ext_resource type="Texture2D" uid="uid://bdw75vgk3t8oc" path="res://Assets/TileSets/assets.png" id="3_t1pf7"]
 [ext_resource type="Texture2D" uid="uid://4cm6v327whlu" path="res://Assets/TileSets/tiles.png" id="4_5qveq"]
 [ext_resource type="Texture2D" uid="uid://eaf478x34hed" path="res://Assets/TileSets/stone_tiles.png" id="4_rsl6b"]
@@ -575,7 +573,6 @@ _data = {
 point_count = 10
 
 [node name="Map1" type="Node2D"]
-script = ExtResource("1_vp2kv")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uuc5h")
@@ -589,7 +586,6 @@ layer_1/tile_data = PackedInt32Array(851968, 65539, 2, 851969, 65539, 2, 851970,
 position = Vector2(12, -76)
 scale = Vector2(1.00762, 1)
 curve = SubResource("Curve2D_2ny3y")
-script = ExtResource("2_lcbas")
 
 [node name="SpawnTimer" type="Timer" parent="Path2D"]
 
