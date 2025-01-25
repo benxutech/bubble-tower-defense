@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-const BOB_SPEED = 0.1
+const BOB_SPEED = 0.15
 var isUp = true
 var offsetY = 0
 
