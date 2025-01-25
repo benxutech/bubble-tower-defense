@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bvgi1slhq3yrd"]
+
+[ext_resource type="Texture2D" uid="uid://dabam0tu7k6dc" path="res://Assets/Bubble/idle/bubl_0001.png" id="1_ashgh"]
+[ext_resource type="Texture2D" uid="uid://5nj8gh8uy2qp" path="res://Assets/Bubble/idle/bubl_0002.png" id="2_dxmcu"]
+[ext_resource type="Texture2D" uid="uid://c3idl06huqcp" path="res://Assets/Bubble/idle/bubl_0003.png" id="3_upopc"]
+[ext_resource type="Texture2D" uid="uid://bmhr6ophrxfyt" path="res://Assets/Bubble/pop/bublpop_0001.png" id="4_yuvj2"]
+[ext_resource type="Texture2D" uid="uid://dt6mgyk3mr5sc" path="res://Assets/Bubble/pop/bublpop_0002.png" id="5_fo4x0"]
+[ext_resource type="Texture2D" uid="uid://kle1kcab2lbl" path="res://Assets/Bubble/pop/bublpop_0003.png" id="6_0rhcf"]
+[ext_resource type="Texture2D" uid="uid://bpq71nexw3vor" path="res://Assets/Bubble/pop/bublpop_0004.png" id="7_ecjt6"]
+[ext_resource type="Texture2D" uid="uid://jb3cavkaiewa" path="res://Assets/Bubble/pop/bublpop_0005.png" id="8_xbt32"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ashgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dxmcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_upopc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dxmcu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yuvj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fo4x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0rhcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ecjt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xbt32")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 15.0
+}]

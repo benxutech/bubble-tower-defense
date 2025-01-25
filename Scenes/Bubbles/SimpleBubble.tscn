@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://buflbcroqi8j2"]
+[gd_scene load_steps=4 format=3 uid="uid://w4iwfip0y10u"]
 
 [ext_resource type="Script" path="res://Scenes/Bubbles/simple_bubble.gd" id="1_mtabc"]
-[ext_resource type="Texture2D" uid="uid://dabam0tu7k6dc" path="res://Assets/Bubble/idle/bubl_0001.png" id="2_syrun"]
+[ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ibvuf"]
+[ext_resource type="Script" path="res://Scenes/Bubbles/animated_sprite_2d.gd" id="3_0qh8w"]
 
 [node name="SimpleBubble" type="PathFollow2D"]
 loop = false
 script = ExtResource("1_mtabc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_syrun")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_ibvuf")
+script = ExtResource("3_0qh8w")
