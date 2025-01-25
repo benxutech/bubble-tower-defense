@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/Bubbles/simple_bubble.gd" id="1_mtabc"]
 [ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ibvuf"]
-[ext_resource type="Script" path="res://Scenes/Bubbles/animated_sprite_2d.gd" id="3_0qh8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plv51"]
+radius = 17.0294
 
 [node name="SimpleBubble" type="PathFollow2D"]
 loop = false
@@ -10,4 +12,11 @@ script = ExtResource("1_mtabc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ibvuf")
-script = ExtResource("3_0qh8w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_plv51")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

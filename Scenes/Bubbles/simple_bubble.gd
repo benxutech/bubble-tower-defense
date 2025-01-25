@@ -3,12 +3,11 @@ extends PathFollow2D
 class_name SimpleBubble
 
 var health = 1
-var speed = 0.5
+var speed = 0.1
 var is_destroyed := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	pass
 
 func finished_path():
@@ -30,4 +29,15 @@ func _process(delta: float) -> void:
 
 # Destroys the bubble
 func pop() -> void:
-	queue_free()
+	speed = 0
+	is_destroyed = true
+	$AnimatedSprite2D.play("pop")
+	
+
+func _on_animated_sprite_2d_animation_finished():
+	if is_destroyed:
+		queue_free()
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	pop()
