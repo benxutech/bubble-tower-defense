@@ -20,7 +20,7 @@ func place() -> void:
 	
 	circle.radius = range
 	collision.shape = circle
-	is_placed = true
+	#is_placed = true
 	self.add_child(collision)
 	
 		
