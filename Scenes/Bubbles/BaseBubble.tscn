@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Bubbles/base_bubble.gd" id="1_hubat"]
 [ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ngfwp"]
 [ext_resource type="Script" path="res://Scenes/Bubbles/bubble_sprite.gd" id="3_g283m"]
-[ext_resource type="Texture2D" uid="uid://dcealjgv30hx0" path="res://Assets/Bubble/shadow.png" id="4_dveh3"]
+[ext_resource type="Texture2D" uid="uid://bm0pahb82tr4y" path="res://Assets/Bubble/shadow.png" id="4_dveh3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui4p5"]
 atlas = ExtResource("4_dveh3")

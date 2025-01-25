@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bubble Tower Defense"
-run/main_scene="res://Scenes/Maps/BaseMap.tscn"
+run/main_scene="res://Scenes/Menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
