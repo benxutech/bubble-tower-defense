@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://qybgk14sq6qg"]
 
-[ext_resource type="Texture2D" uid="uid://bdw75vgk3t8oc" path="res://Assets/TileSets/assets.png" id="3_t1pf7"]
-[ext_resource type="Texture2D" uid="uid://4cm6v327whlu" path="res://Assets/TileSets/tiles.png" id="4_5qveq"]
-[ext_resource type="Texture2D" uid="uid://eaf478x34hed" path="res://Assets/TileSets/stone_tiles.png" id="4_rsl6b"]
-[ext_resource type="Texture2D" uid="uid://buocastygp6ft" path="res://Assets/TileSets/wooden_path_tiles.png" id="5_y8nw6"]
+[gd_scene load_steps=11 format=3 uid="uid://drr5rm4ea18cq"]
+
+[ext_resource type="Texture2D" path="res://Assets/TileSets/assets.png" id="3_t1pf7"]
+[ext_resource type="Texture2D" path="res://Assets/TileSets/tiles.png" id="4_5qveq"]
+[ext_resource type="Texture2D" path="res://Assets/TileSets/stone_tiles.png" id="4_rsl6b"]
+[ext_resource type="Texture2D" path="res://Assets/TileSets/wooden_path_tiles.png" id="5_y8nw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6x0j"]
 texture = ExtResource("3_t1pf7")

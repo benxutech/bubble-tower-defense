@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GlobalSignal="*res://Scenes/Main/global_signal.gd"
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=608
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

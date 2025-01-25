@@ -1,22 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://w4iwfip0y10u"]
+[gd_scene load_steps=10 format=3 uid="uid://cl53g0cgwff8a"]
 
 [ext_resource type="Script" path="res://Scenes/Bubbles/base_bubble.gd" id="1_hubat"]
-[ext_resource type="SpriteFrames" path="res://Scenes/Bubbles/bubble.tres" id="2_ngfwp"]
+[ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ngfwp"]
+[ext_resource type="Script" path="res://Scenes/Bubbles/bubble_sprite.gd" id="3_g283m"]
+[ext_resource type="Texture2D" uid="uid://dcealjgv30hx0" path="res://Assets/Bubble/shadow.png" id="4_dveh3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui4p5"]
+atlas = ExtResource("4_dveh3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1emo"]
+atlas = ExtResource("4_dveh3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnmey"]
+atlas = ExtResource("4_dveh3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_622ai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui4p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1emo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnmey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plv51"]
 radius = 17.0294
 
 [node name="BaseBubble" type="PathFollow2D"]
+rotates = false
 loop = false
 script = ExtResource("1_hubat")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="BubbleSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
 sprite_frames = ExtResource("2_ngfwp")
+script = ExtResource("3_g283m")
+
+[node name="Timer" type="Timer" parent="BubbleSprite"]
+wait_time = 0.5
+autostart = true
+
+[node name="ShadowSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_622ai")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_plv51")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="BubbleSprite" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="BubbleSprite/Timer" to="BubbleSprite" method="_on_timer_timeout"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
