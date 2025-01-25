@@ -3,8 +3,9 @@ extends PathFollow2D
 class_name SimpleBubble
 
 var health = 1
-var speed = 0.5
+var speed = 0.2
 var is_destroyed := false
+var base_damage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,7 @@ func finished_path():
 	if is_destroyed:
 		return
 	is_destroyed = true
-	print('destroying it')
+	GlobalSignal.damage_taken.emit(base_damage)
 	queue_free()
 
 
