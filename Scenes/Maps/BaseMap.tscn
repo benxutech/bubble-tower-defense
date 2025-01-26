@@ -20,6 +20,9 @@ content_margin_bottom = 4.0
 [node name="BaseMap" type="Node2D"]
 script = ExtResource("1_scobg")
 
+[node name="SpawnerPath" parent="." instance=ExtResource("4_2w5af")]
+position = Vector2(-16, 432)
+
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_vdl6l")
 max_polyphony = 24
@@ -81,6 +84,3 @@ text = "Health:"
 [node name="HealthLabel" type="Label" parent="HpPanel/HSplitContainer"]
 layout_mode = 2
 text = "100"
-
-[node name="SpawnerPath" parent="." instance=ExtResource("4_2w5af")]
-position = Vector2(-16, 432)

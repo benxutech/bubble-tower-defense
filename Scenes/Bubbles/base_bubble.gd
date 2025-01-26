@@ -12,12 +12,12 @@ var is_destroyed := false
 func _ready() -> void:
 	pass
 
-func finished_path():
+func finish_path():
 	if is_destroyed:
 		return
 	is_destroyed = true
 	GlobalSignal.damage_taken.emit(base_damage)
-	pop()
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	progress_ratio += speed * delta
 	
 	if progress_ratio >= 1:
-		finished_path()
+		finish_path()
 		return
 
 # Destroys the bubble

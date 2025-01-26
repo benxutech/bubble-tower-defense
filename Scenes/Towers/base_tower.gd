@@ -14,12 +14,10 @@ func _process(_delta: float) -> void:
 		
 func _physics_process(_delta: float) -> void:
 	if attack_range_cast && attack_range_cast.is_colliding():
-		print(attack_range_cast.get_collision_count())
 		if attack_range_cast.get_collider(0) is BaseBubble:
 			print("it is a bubble")
 
 func place() -> void:
-	pass
 	add_collision()
 	add_range_attack()
 	#is_placed = true
