@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctt8x6tspnqly"]
+[gd_scene load_steps=3 format=3 uid="uid://ctt8x6tspnqly"]
 
 [ext_resource type="Script" path="res://Scenes/Spawner/spawner_path.gd" id="1_m8tbs"]
 
-[node name="SpawnerPath" type="PathFollow2D"]
+[sub_resource type="Curve2D" id="Curve2D_18u00"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 208, 0, 0, 0, 0, 0, 216, -8, 0, 0, 0, 0, 224, -32, 0, 0, 0, 0, 224, -264, 0, 0, 0, 0, 232, -280, 0, 0, 0, 0, 248, -288, 0, 0, 0, 0, 584, -288, 0, 0, 0, 0, 600, -280, 0, 0, 0, 0, 608, -256, 0, 0, 0, 0, 608, -144, 0, 0, 0, 0, 616, -136, 0, 0, 0, 0, 648, -128, 0, 0, 0, 0, 936, -128)
+}
+point_count = 14
+
+[node name="SpawnerPath" type="Path2D"]
+curve = SubResource("Curve2D_18u00")
 script = ExtResource("1_m8tbs")
 
 [node name="SpawnTimer" type="Timer" parent="."]

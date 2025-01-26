@@ -1,4 +1,4 @@
-extends PathFollow2D
+extends Path2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +20,8 @@ func _on_change_spawner_status(is_active: bool) -> void:
 func _on_spawn_timer_timeout() -> void:
 	var bubbleScene := preload("res://Scenes/Bubbles/BaseBubble.tscn")
 	var yellowBubbleScene := preload("res://Scenes/Bubbles/YellowBubble.tscn")
+	var bubble = bubbleScene.instantiate()
+	var yellowBubble = yellowBubbleScene.instantiate()
 	
-	var bubble = yellowBubbleScene.instantiate()
-	
-	get_parent().add_child(bubble)
+	add_child(bubble)
+	add_child(yellowBubble)
