@@ -19,7 +19,6 @@ func _physics_process(_delta: float) -> void:
 			print("it is a bubble")
 
 func place() -> void:
-	pass
 	add_collision()
 	add_range_attack()
 	#is_placed = true

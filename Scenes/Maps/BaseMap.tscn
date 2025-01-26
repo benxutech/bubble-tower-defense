@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cebwiqq8wyobx"]
+[gd_scene load_steps=6 format=3 uid="uid://cebwiqq8wyobx"]
 
 [ext_resource type="Script" path="res://Scenes/Maps/base_map_1.gd" id="1_scobg"]
-[ext_resource type="AudioStream" uid="uid://dbrcajfhurev7" path="res://Assets/Sound/SFX_single_bubble_pop-001.wav" id="2_vdl6l"]
 [ext_resource type="Texture2D" uid="uid://t076228ahugp" path="res://Assets/Tower/towertopdown.png" id="3_qkkda"]
 [ext_resource type="PackedScene" uid="uid://ctt8x6tspnqly" path="res://Scenes/Spawner/SpawnerPath.tscn" id="4_2w5af"]
 
@@ -19,10 +18,6 @@ content_margin_bottom = 4.0
 
 [node name="BaseMap" type="Node2D"]
 script = ExtResource("1_scobg")
-
-[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_vdl6l")
-max_polyphony = 24
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 910.0

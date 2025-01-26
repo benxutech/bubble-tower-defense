@@ -13,6 +13,8 @@ func _ready() -> void:
 	GlobalSignal.change_spawner_status.emit(true)
 	health_label = $HpPanel/HSplitContainer/HealthLabel
 	candy_label = $PanelContainer/VBoxContainer/HSplitContainer/CandyLabel
+	#place_tower(Vector2(100, 350))
+	#place_tower(Vector2(50, 350))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -42,8 +44,6 @@ func on_damage_taken(damage_point: int) -> void:
 		
 func on_bubble_popped() -> void:
 	candy += 1
-	if ($PopSound):
-		$PopSound.play()
 
 func finish_map() -> void:
 	GlobalSignal.change_spawner_status.emit(false)

@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxvoyhx6tgu3k"]
+[gd_scene load_steps=2 format=3 uid="uid://c6cvu3kqjs2l8"]
 
 [ext_resource type="PackedScene" uid="uid://cl53g0cgwff8a" path="res://Scenes/Bubbles/BaseBubble.tscn" id="1_udmdv"]
 
-[node name="BaseBubble" instance=ExtResource("1_udmdv")]
+[node name="BaseBubble2" instance=ExtResource("1_udmdv")]
+health = 5
+color = Color(1, 1, 0, 0.996078)
