@@ -19,8 +19,6 @@ func _process(delta):
 
 
 func _on_timer_timeout():	 
-	if isUp:
-		isUp = false
-	else:
-		isUp = true
+	isUp = not isUp
+	
 	$Timer.start()
