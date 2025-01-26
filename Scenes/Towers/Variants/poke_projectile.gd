@@ -17,5 +17,4 @@ func _process(_delta):
 
 func _on_area_2d_area_entered(area):
 	if area is BaseBubble:
-		print(area)
 		queue_free()

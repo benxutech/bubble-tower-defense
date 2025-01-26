@@ -18,8 +18,8 @@ func _ready() -> void:
 	health_label = $HpPanel/HSplitContainer/HealthLabel
 	candy_label = $PanelContainer/VBoxContainer/HSplitContainer/CandyNumber
 	wave_label = $PanelContainer/HSplitContainer/WaveNumber
-	#place_tower(Vector2(100, 350))
-	#place_tower(Vector2(50, 350))
+	place_tower(Vector2(100, 350))
+	place_tower(Vector2(50, 350))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -5,7 +5,7 @@ class_name BaseTower
 var is_placed = false
 var can_place = false
 @export var collision_radius = 50.0
-@export var attack_range_radius = 50.0
+@export var attack_range_radius = 100.0
 var attack_range_cast: ShapeCast2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 		var target = attack_range_cast.get_collider(0)
 		var is_bubble = target.get_meta("is_bubble", false)
 		if is_bubble :
-			print("it is a bubble")
+			pass
 		
 
 func place() -> void:

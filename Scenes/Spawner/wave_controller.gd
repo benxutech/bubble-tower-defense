@@ -2,10 +2,10 @@ extends Path2D
 
 var bubbleScenes := {
 	"BaseBubble": preload("res://Scenes/Bubbles/BaseBubble.tscn"),
-	"YellowBubble": preload("res://Scenes/Bubbles/YellowBubble.tscn"),
-	"RedBubble": preload("res://Scenes/Bubbles/RedBubble.tscn"),
-	"PurpleBubble": preload("res://Scenes/Bubbles/PurpleBubble.tscn"),
-	"PinkBubble": preload("res://Scenes/Bubbles/PinkBubble.tscn")
+	"YellowBubble": preload("res://Scenes/Bubbles/Variants/YellowBubble.tscn"),
+	"RedBubble": preload("res://Scenes/Bubbles/Variants/RedBubble.tscn"),
+	"PurpleBubble": preload("res://Scenes/Bubbles/Variants/PurpleBubble.tscn"),
+	"PinkBubble": preload("res://Scenes/Bubbles/Variants/PinkBubble.tscn")
 }
 var waves_data = {}
 var current_wave_bubbles = []
@@ -18,9 +18,6 @@ func _ready() -> void:
 		var json = file.get_as_text()
 		waves_data = JSON.parse_string(json)["waves"]
 		file.close()
-	else:
-		print("Failed to load waves.json")
-	print(waves_data)
 
 # adds an array of bubbles to the current_wave_bubbles variable, once this array is empty and no bubbles remain we go next wave
 func start_new_wave() -> void:
@@ -28,11 +25,8 @@ func start_new_wave() -> void:
 	GlobalSignal.wave_update.emit(current_wave)
 	var current_wave_data = waves_data[current_wave - 1]
 	if current_wave_data:
-		print("Starting wave:", current_wave)
 		for bubble_info in current_wave_data["bubbles"]:
 			add_bubbles_to_wave(bubble_info)
-	else:
-		print("Wave not found:", current_wave)
 		
 func add_bubbles_to_wave(bubble_info: Dictionary) -> void:
 	var bubble_type = bubble_info["type"]
