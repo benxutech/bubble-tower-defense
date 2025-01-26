@@ -19,6 +19,8 @@ func _on_change_spawner_status(is_active: bool) -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	var bubbleScene := preload("res://Scenes/Bubbles/BaseBubble.tscn")
-	var bubble = bubbleScene.instantiate()
+	var yellowBubbleScene := preload("res://Scenes/Bubbles/YellowBubble.tscn")
+	
+	var bubble = yellowBubbleScene.instantiate()
 	
 	get_parent().add_child(bubble)

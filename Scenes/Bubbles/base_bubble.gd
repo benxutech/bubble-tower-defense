@@ -2,10 +2,11 @@ extends PathFollow2D
 
 class_name BaseBubble
 
-var health = 1
-var speed = 0.1
+@export var health = 1
+@export var speed = 0.1
+@export var base_damage = 1
+@export var color: Color
 var is_destroyed := false
-var base_damage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
