@@ -1,11 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8nps7rr370ms"]
+[gd_scene load_steps=2 format=3 uid="uid://bwkj7op7l2s18"]
 
 [ext_resource type="PackedScene" uid="uid://cq3ji0nfn41qj" path="res://Scenes/Towers/BaseTower.tscn" id="1_tfita"]
-[ext_resource type="Script" path="res://Scenes/Towers/Variants/poke_tower.gd" id="2_2aeku"]
 
 [node name="BaseTower" instance=ExtResource("1_tfita")]
-script = ExtResource("2_2aeku")
-
-[node name="Arms" parent="." index="0"]
-centered = true
-offset = Vector2(17, 23)

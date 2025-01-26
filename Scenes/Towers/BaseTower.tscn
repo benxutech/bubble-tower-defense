@@ -57,6 +57,7 @@ _data = {
 
 [node name="BaseTower" type="Node2D"]
 script = ExtResource("1_dgc5p")
+base_attack_cooldown_time_ms = 1000
 
 [node name="Arms" type="Sprite2D" parent="."]
 rotation = -1.5708
@@ -77,6 +78,5 @@ libraries = {
 [node name="CollisionArea2D" type="Area2D" parent="."]
 
 [node name="CooldownTimer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
