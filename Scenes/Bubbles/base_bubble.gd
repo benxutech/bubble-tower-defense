@@ -53,7 +53,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:
 		queue_free()
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	## TODO: Left and Right click works...
 	if event is InputEventMouseButton && event.is_pressed():
 		deal_bubble_click_damage()

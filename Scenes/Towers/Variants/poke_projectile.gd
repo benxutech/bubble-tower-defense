@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	translate(Vector2(-speed, 0).rotated(rotation))
 	#translate(Vector2())
 

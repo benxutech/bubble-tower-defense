@@ -32,15 +32,6 @@ func _process(_delta: float) -> void:
 		wave_label.text = str(wave_number)
 		
 		
-#func _input(event) -> void:
-	#if event is InputEventMouseButton:
-		#if event.pressed:
-			##check if afford
-			##deduct money
-			#place_tower(event.position)
-			#current_selected_tower = -1
-		
-		
 func place_tower(position: Vector2) -> void:
 	var towerScene := preload("res://Scenes/Towers/Variants/PokeTower.tscn")
 	var tower = towerScene.instantiate()
