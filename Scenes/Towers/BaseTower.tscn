@@ -1,19 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq3ji0nfn41qj"]
+[gd_scene load_steps=3 format=3 uid="uid://cq3ji0nfn41qj"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/base_tower.gd" id="1_dgc5p"]
 [ext_resource type="Texture2D" uid="uid://e6y2jlg8dloh" path="res://icon.svg" id="1_jwm88"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oa3y"]
-size = Vector2(128, 128)
 
 [node name="BaseTower" type="Node2D"]
 script = ExtResource("1_dgc5p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jwm88")
-
-[node name="CollisionArea" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
-shape = SubResource("RectangleShape2D_6oa3y")

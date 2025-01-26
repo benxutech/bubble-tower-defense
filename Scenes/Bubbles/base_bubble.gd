@@ -44,5 +44,4 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	## TODO: Left and Right click works...
 	if event is InputEventMouseButton && event.is_pressed():
-		print(event)
 		pop()
