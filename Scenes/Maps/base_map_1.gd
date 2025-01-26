@@ -2,11 +2,13 @@ extends Node2D
 
 var health = 3
 var is_game_over = false
+var health_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignal.damage_taken.connect(on_damage_taken)
 	GlobalSignal.change_spawner_status.emit(true)
+	health_label = get_node("VBoxContainer/HealthLabel")
 
 func _input(event: InputEvent) -> void:
 	# TODO: remove false
@@ -17,7 +19,8 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if health_label:
+		health_label.text = str(health)
 	
 func place_tower(position: Vector2) -> void:
 	var towerScene := preload("res://Scenes/Towers/BaseTower.tscn")

@@ -16,4 +16,4 @@ func _on_button_exit_pressed():
 
 
 func _on_button_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Maps/BaseMap.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Maps/George's Map.tscn")
