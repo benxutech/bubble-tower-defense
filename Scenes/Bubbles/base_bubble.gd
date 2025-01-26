@@ -6,8 +6,8 @@ class_name BaseBubble
 @export var speed = 0.1
 @export var base_damage = 1
 @export var color: Color = Color.DARK_TURQUOISE
+@export var click_damage = 2
 var is_destroyed := false
-var click_damage = 2
 var current_health = max_health
 
 # Called when the node enters the scene tree for the first time.
@@ -31,10 +31,16 @@ func _process(delta: float) -> void:
 		finish_path()
 		return
 
+func hit(damage: int) -> void:
+	if not is_destroyed:
+		current_health -= click_damage
+		if current_health <= 0:
+			pop()
+	
+
 func deal_bubble_click_damage() -> void:
-	current_health -= click_damage
 	if current_health <= 0:
-		pop()
+		hit(click_damage)
 	else:
 		if ($HitSound):
 			$HitSound.play()
