@@ -11,10 +11,3 @@ func _process(_delta):
 	if is_placed:
 		if not $AnimationPlayer.is_playing():
 			$AnimationPlayer.play("attack")
-
-func create_projectile():
-	var projectileScene := preload("res://Scenes/Towers/Variants/PokeProjectile.tscn")
-	var projectile = projectileScene.instantiate()
-	projectile.scale = Vector2(2,2)
-	projectile.rotation = rotation
-	add_child(projectile)

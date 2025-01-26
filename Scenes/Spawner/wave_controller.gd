@@ -22,11 +22,15 @@ func _ready() -> void:
 # adds an array of bubbles to the current_wave_bubbles variable, once this array is empty and no bubbles remain we go next wave
 func start_new_wave() -> void:
 	current_wave += 1
+	
 	GlobalSignal.wave_update.emit(current_wave)
 	var current_wave_data = waves_data[current_wave - 1]
 	if current_wave_data:
 		for bubble_info in current_wave_data["bubbles"]:
 			add_bubbles_to_wave(bubble_info)
+		if $SpawnTimer:
+			$SpawnTimer.wait_time = 0.5 * current_wave_data.spawn_interval
+			print($SpawnTimer.wait_time)
 		
 func add_bubbles_to_wave(bubble_info: Dictionary) -> void:
 	var bubble_type = bubble_info["type"]

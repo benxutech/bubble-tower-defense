@@ -60,7 +60,6 @@ func place_tower(position: Vector2) -> void:
 	tower.place()
 	add_child(tower)
 
-
 func on_damage_taken(damage_point: int) -> void:
 	if is_game_over:
 		return
