@@ -3,5 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cl53g0cgwff8a" path="res://Scenes/Bubbles/BaseBubble.tscn" id="1_udmdv"]
 
 [node name="BaseBubble2" instance=ExtResource("1_udmdv")]
-health = 5
+max_health = 2
 color = Color(1, 1, 0, 0.996078)

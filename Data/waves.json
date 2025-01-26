@@ -1,0 +1,21 @@
+{
+  "waves": [
+	{
+	  "wave_number": 1,
+	  "bubbles": [
+		{"type": "BaseBubble", "count": 5},
+		{"type": "YellowBubble", "count": 3}
+	  ],
+	  "spawn_interval": 2.0
+	},
+	{
+	  "wave_number": 2,
+	  "bubbles": [
+		{"type": "BaseBubble", "count": 7},
+		{"type": "YellowBubble", "count": 4},
+		{"type": "RedBubble", "count": 1}
+	  ],
+	  "spawn_interval": 1.5
+	}
+  ]
+}

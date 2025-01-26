@@ -2,16 +2,18 @@ extends PathFollow2D
 
 class_name BaseBubble
 
-@export var health = 1
+@export var max_health = 1
 @export var speed = 0.1
 @export var base_damage = 1
 @export var color: Color = Color.DARK_TURQUOISE
 var is_destroyed := false
 var click_damage = 2
+var current_health = max_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	modulate = color
+	current_health = max_health
 	pass
 
 func finish_path():
@@ -20,7 +22,6 @@ func finish_path():
 	is_destroyed = true
 	GlobalSignal.damage_taken.emit(base_damage)
 	queue_free()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,8 +32,8 @@ func _process(delta: float) -> void:
 		return
 
 func deal_bubble_click_damage() -> void:
-	health -= click_damage
-	if health <= 0:
+	current_health -= click_damage
+	if current_health <= 0:
 		pop()
 	else:
 		if ($HitSound):
@@ -46,7 +47,7 @@ func pop() -> void:
 		$BubbleSprite.play("pop")
 		if ($PopSound):
 			$PopSound.play()
-		GlobalSignal.bubble_popped.emit()
+		GlobalSignal.bubble_popped.emit(max_health)
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:

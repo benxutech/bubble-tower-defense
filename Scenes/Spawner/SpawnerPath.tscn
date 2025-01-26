@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctt8x6tspnqly"]
 
-[ext_resource type="Script" path="res://Scenes/Spawner/spawner_path.gd" id="1_m8tbs"]
+[ext_resource type="Script" path="res://Scenes/Spawner/wave_controller.gd" id="1_m8tbs"]
 
 [sub_resource type="Curve2D" id="Curve2D_18u00"]
 _data = {

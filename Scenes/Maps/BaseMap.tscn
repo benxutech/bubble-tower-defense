@@ -67,6 +67,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pecuy")
 layout_mode = 2
 theme_override_constants/separation = 18
 
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CandyNumber" type="Label" parent="PanelContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "0
+"
+
+[node name="CandyLabel" type="Label" parent="PanelContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Candy"
+
 [node name="Button1" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "10"
@@ -81,6 +93,18 @@ icon = ExtResource("3_qkkda")
 layout_mode = 2
 text = "10"
 icon = ExtResource("3_qkkda")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="WaveLabel" type="Label" parent="PanelContainer/HSplitContainer"]
+layout_mode = 2
+text = "Wave: "
+
+[node name="WaveNumber" type="Label" parent="PanelContainer/HSplitContainer"]
+layout_mode = 2
+text = "0
+"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
