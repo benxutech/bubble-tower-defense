@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl53g0cgwff8a"]
+[gd_scene load_steps=12 format=3 uid="uid://cl53g0cgwff8a"]
 
 [ext_resource type="Script" path="res://Scenes/Bubbles/base_bubble.gd" id="1_hubat"]
 [ext_resource type="AudioStream" uid="uid://dbrcajfhurev7" path="res://Assets/Sound/SFX_single_bubble_pop-001.wav" id="2_gknos"]
 [ext_resource type="SpriteFrames" uid="uid://bvgi1slhq3yrd" path="res://Scenes/Bubbles/bubble.tres" id="2_ngfwp"]
+[ext_resource type="AudioStream" uid="uid://cgu40rndv8se5" path="res://Assets/Sound/bubble-hit.wav" id="2_yph8f"]
 [ext_resource type="Script" path="res://Scenes/Bubbles/bubble_sprite.gd" id="3_g283m"]
 [ext_resource type="Texture2D" uid="uid://bm0pahb82tr4y" path="res://Assets/Bubble/shadow.png" id="4_dveh3"]
 
@@ -42,6 +43,11 @@ radius = 17.0294
 rotates = false
 loop = false
 script = ExtResource("1_hubat")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yph8f")
+volume_db = -10.0
+max_polyphony = 24
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gknos")

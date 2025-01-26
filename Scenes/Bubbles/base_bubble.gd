@@ -32,9 +32,11 @@ func _process(delta: float) -> void:
 
 func deal_bubble_click_damage() -> void:
 	health -= click_damage
-#	play damage sound
 	if health <= 0:
 		pop()
+	else:
+		if ($HitSound):
+			$HitSound.play()
 
 # Destroys the bubble
 func pop() -> void:

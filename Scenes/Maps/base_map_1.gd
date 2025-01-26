@@ -26,13 +26,13 @@ func _process(_delta: float) -> void:
 		candy_label.text = str(candy)
 		
 		
-func _input(event) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			#check if afford
-			#deduct money
-			place_tower(event.position)
-			current_selected_tower = -1
+#func _input(event) -> void:
+	#if event is InputEventMouseButton:
+		#if event.pressed:
+			##check if afford
+			##deduct money
+			#place_tower(event.position)
+			#current_selected_tower = -1
 		
 		
 func place_tower(position: Vector2) -> void:
