@@ -77,6 +77,7 @@ libraries = {
 [node name="CollisionArea2D" type="Area2D" parent="."]
 
 [node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

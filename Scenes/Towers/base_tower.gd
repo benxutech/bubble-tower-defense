@@ -2,24 +2,51 @@ extends Node2D
 
 class_name BaseTower
 
-var is_placed = false
+var is_placed = true
 var can_place = false
 @export var collision_radius = 50.0
 @export var attack_range_radius = 100.0
 @export var base_attack_cooldown_time_ms: int = 500
 @export var base_attack_damage = 1
 var attack_range_cast: ShapeCast2D
+var can_attack = false
 
 func _ready() -> void:
 	$CooldownTimer.start(base_attack_cooldown_time_ms / 1000) # TODO: this method is not being called. Bug on spawn
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not is_placed:
 		set_collision_status($CollisionArea2D.has_overlapping_areas())
 	else:
-		if not $AnimationPlayer.is_playing():
-			$AnimationPlayer.play("attack")
+		attack()
+
+func attack() -> void:
+	if can_attack:
+		var bubble = get_bubble()
+		
+		if bubble:
+			var direction = (bubble.global_position - global_position).normalized()
+			var angle = direction.angle()
+			
+			bubble.hit(base_attack_damage)
+			can_attack = false
+			rotation = angle
+			
+			if not $AnimationPlayer.is_playing():
+				$AnimationPlayer.play("attack")
+		
+func get_bubble() -> BaseBubble:
+	if attack_range_cast and attack_range_cast.is_colliding():
+		var target = attack_range_cast.get_collider(0)
+
+		if target:
+			var is_bubble = target.get_meta("is_bubble", false)
+			if is_bubble:
+				var area = target as Area2D
+				return area.get_parent() as BaseBubble  # Explicitly cast to BaseBubble
+			
+	return null
 
 func place() -> void:
 	add_collision()
@@ -54,18 +81,4 @@ func set_collision_status(is_colliding: bool):
 	modulate = Color(color) 
 
 func _on_cooldown_timer_timeout() -> void:
-	if attack_range_cast && attack_range_cast.is_colliding():
-		var target = attack_range_cast.get_collider(0)
-	
-		if(target):
-			var is_bubble = target.get_meta("is_bubble", false)
-			if is_bubble:
-				var area = target as Area2D
-				var direction = (area.global_position - global_position).normalized()
-
-				var angle = direction.angle()
-
-				rotation = angle
-				if not $AnimationPlayer.is_playing():
-					$AnimationPlayer.play("attack")
-				area.get_parent().hit(base_attack_damage)
+	can_attack = true
