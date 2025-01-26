@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dthv7amw5v1ia"]
+
+[ext_resource type="Texture2D" uid="uid://cjmystg24vjig" path="res://Assets/Tower/testprojectile.png" id="1_70p3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w8gk"]
+size = Vector2(12, 12)
+
+[node name="PokeProjectile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_70p3s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0w8gk")

@@ -4,17 +4,17 @@
 [ext_resource type="AudioStream" uid="uid://dbrcajfhurev7" path="res://Assets/Sound/SFX_single_bubble_pop-001.wav" id="2_vdl6l"]
 [ext_resource type="Texture2D" uid="uid://t076228ahugp" path="res://Assets/Tower/towertopdown.png" id="3_qkkda"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pecuy"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15ok3"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pecuy"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 
 [node name="BaseMap" type="Node2D"]
 script = ExtResource("1_scobg")
@@ -22,31 +22,6 @@ script = ExtResource("1_scobg")
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_vdl6l")
 max_polyphony = 24
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 910.0
-offset_right = 1024.0
-offset_bottom = 608.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pecuy")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/separation = 18
-
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "10"
-icon = ExtResource("3_qkkda")
-
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "10"
-icon = ExtResource("3_qkkda")
-
-[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "10"
-icon = ExtResource("3_qkkda")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 40.0
@@ -68,3 +43,32 @@ text = "Health:"
 [node name="HealthLabel" type="Label" parent="HpPanel/HSplitContainer"]
 layout_mode = 2
 text = "100"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 910.0
+offset_right = 1024.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pecuy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Button1" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "10"
+icon = ExtResource("3_qkkda")
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "10"
+icon = ExtResource("3_qkkda")
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "10"
+icon = ExtResource("3_qkkda")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
