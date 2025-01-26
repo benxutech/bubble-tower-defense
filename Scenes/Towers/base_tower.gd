@@ -66,4 +66,6 @@ func _on_cooldown_timer_timeout() -> void:
 				var angle = direction.angle()
 
 				rotation = angle
+				if not $AnimationPlayer.is_playing():
+					$AnimationPlayer.play("attack")
 				area.get_parent().hit(base_attack_damage)
