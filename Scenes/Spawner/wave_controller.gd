@@ -13,11 +13,7 @@ var current_wave = 0
 
 func _ready() -> void:
 	GlobalSignal.change_spawner_status.connect(_on_change_spawner_status)
-	var file = FileAccess.open("res://data/waves.json", FileAccess.READ)
-	if file:
-		var json = file.get_as_text()
-		waves_data = JSON.parse_string(json)["waves"]
-		file.close()
+	waves_data = DataWaves.new().waves
 
 # adds an array of bubbles to the current_wave_bubbles variable, once this array is empty and no bubbles remain we go next wave
 func start_new_wave() -> void:

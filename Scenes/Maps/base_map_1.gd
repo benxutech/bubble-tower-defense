@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var health = 3
-@export var candy = 0
+@export var candy = 100
 var wave_number = 1
 var is_game_over = false
 var health_label
@@ -53,12 +53,12 @@ func _input(event) -> void:
 				current_selected_tower = -1
 
 func place_tower(position: Vector2) -> void:
-	var towerScene := preload("res://Scenes/Towers/Variants/PokeTower.tscn")
+	var towerScene = preload("res://Scenes/Towers/Variants/PokeTower.tscn")
 	var tower = towerScene.instantiate()
 
+	self.add_child(tower)
 	tower.position = position
 	tower.place()
-	add_child(tower)
 
 func on_damage_taken(damage_point: int) -> void:
 	if is_game_over:

@@ -1,5 +1,8 @@
-{
-  "waves": [
+extends Node
+
+class_name DataWaves
+
+var waves = [
 	{
 	  "wave_number": 1,
 	  "bubbles": [
@@ -178,4 +181,3 @@
 	  "spawn_interval": 0.7
 	}
   ]
-}
