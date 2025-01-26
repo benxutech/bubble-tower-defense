@@ -1,20 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6cvu3kqjs2l8"]
+[gd_scene load_steps=2 format=3 uid="uid://cxvoyhx6tgu3k"]
 
-[sub_resource type="GDScript" id="GDScript_vmv3h"]
-script/source = "extends BaseBubble
+[ext_resource type="PackedScene" uid="uid://cl53g0cgwff8a" path="res://Scenes/Bubbles/BaseBubble.tscn" id="1_udmdv"]
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[node name="YellowBubble" type="PathFollow2D"]
-script = SubResource("GDScript_vmv3h")
-health = 5
-color = Color(1, 1, 0, 0.996078)
+[node name="BaseBubble" instance=ExtResource("1_udmdv")]
