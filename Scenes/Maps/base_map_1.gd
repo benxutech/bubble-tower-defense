@@ -1,9 +1,11 @@
 extends Node2D
 
 var health = 3
+var candy = 0
 var is_game_over = false
 var health_label
 var current_selected_tower = -1
+var candy_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,12 +13,15 @@ func _ready() -> void:
 	GlobalSignal.bubble_popped.connect(on_bubble_popped)
 	GlobalSignal.change_spawner_status.emit(true)
 	health_label = $HpPanel/HSplitContainer/HealthLabel
+	candy_label = $PanelContainer/VBoxContainer/HSplitContainer/CandyLabel
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if health_label:
 		health_label.text = str(health)
+	if candy_label:
+		candy_label.text = str(candy)
 		
 		
 func _input(event) -> void:
@@ -50,6 +55,7 @@ func on_damage_taken(damage_point: int) -> void:
 		
 		
 func on_bubble_popped() -> void:
+	candy += 1
 	if ($PopSound):
 		$PopSound.play()
 

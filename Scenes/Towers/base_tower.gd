@@ -9,15 +9,13 @@ var attack_range_cast: ShapeCast2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if not is_placed:
-		$CollisionArea && set_collision_status($CollisionArea.has_overlapping_areas())
+		set_collision_status($CollisionArea2D.has_overlapping_areas())
 	if is_placed:
 		if not $AnimationPlayer.is_playing():
 			$AnimationPlayer.play("attack")
-	
 		
 func _physics_process(_delta: float) -> void:
 	if attack_range_cast && attack_range_cast.is_colliding():
-		print(attack_range_cast.get_collision_count())
 		if attack_range_cast.get_collider(0) is BaseBubble:
 			print("it is a bubble")
 
@@ -32,7 +30,7 @@ func add_collision() -> void :
 
 	circle.radius = collision_radius
 	collision.shape = circle
-	add_child(collision)
+	$CollisionArea2D.add_child(collision)
 
 func add_range_attack() -> void:
 	var circle = CircleShape2D.new()
@@ -41,9 +39,7 @@ func add_range_attack() -> void:
 	attack_range_cast.collide_with_areas = true
 	attack_range_cast.shape = circle
 	circle.radius = atack_range_radius
-	var collision = $CollisionArea
-	if (collision):
-		collision.add_child(attack_range_cast)
+	add_child(attack_range_cast)
 
 func set_collision_status(is_colliding: bool):
 	# TODO: Should we have a global const for colors?

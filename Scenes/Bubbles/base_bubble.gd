@@ -2,29 +2,30 @@ extends PathFollow2D
 
 class_name BaseBubble
 
-var health = 1
-var speed = 0.1
+@export var health = 1
+@export var speed = 0.1
+@export var base_damage = 1
+@export var color: Color
 var is_destroyed := false
-var base_damage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
-func finished_path():
+func finish_path():
 	if is_destroyed:
 		return
 	is_destroyed = true
 	GlobalSignal.damage_taken.emit(base_damage)
-	pop()
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	progress_ratio += speed * delta
-
+	
 	if progress_ratio >= 1:
-		finished_path()
+		finish_path()
 		return
 
 # Destroys the bubble

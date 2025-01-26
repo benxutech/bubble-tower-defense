@@ -73,3 +73,5 @@ texture = ExtResource("3_febxg")
 libraries = {
 "": SubResource("AnimationLibrary_jpdbe")
 }
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
