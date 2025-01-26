@@ -39,11 +39,12 @@ func hit(damage: int) -> void:
 	
 
 func deal_bubble_click_damage() -> void:
-	if current_health <= 0:
-		hit(click_damage)
-	else:
+	hit(click_damage)
+	
+	if current_health > 0:
 		if ($HitSound):
 			$HitSound.play()
+		
 
 # Destroys the bubble
 func pop() -> void:
