@@ -81,32 +81,5 @@ func finish_map() -> void:
 	GlobalSignal.change_spawner_status.emit(false)
 
 
-#func _on_button_1_pressed():
-	#print('clicked the button')
-	#if current_selected_tower == 1:
-		#current_selected_tower = -1
-	#else:
-		#print('clicked the button')
-		#$CreateTowerUI.visible = true
-		#current_selected_tower = 1
-#
-#
-#func _on_button_2_pressed():
-	#if current_selected_tower == 2:
-		#current_selected_tower = -1
-	#else:
-		#current_selected_tower = 2
-#
-#
-#func _on_button_3_pressed():
-	#if current_selected_tower == 3:
-		#current_selected_tower = -1
-	#else:
-		#current_selected_tower = 3
-
-
 func _on_button_1_pressed() -> void:
-	if current_selected_tower == 1:
-		current_selected_tower = -1
-	else:
-		current_selected_tower = 1
+	current_selected_tower *= -1

@@ -6,8 +6,12 @@ var is_placed = false
 var can_place = false
 @export var collision_radius = 50.0
 @export var attack_range_radius = 100.0
+@export var base_attack_cooldown_time_ms: int = 500
 @export var base_attack_damage = 1
 var attack_range_cast: ShapeCast2D
+
+func _ready() -> void:
+	$CooldownTimer.start(base_attack_cooldown_time_ms / 1000) # TODO: this method is not being called. Bug on spawn
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -16,16 +20,7 @@ func _process(_delta: float) -> void:
 	else:
 		if not $AnimationPlayer.is_playing():
 			$AnimationPlayer.play("attack")
-		
-func _physics_process(_delta: float) -> void:
-	if attack_range_cast && attack_range_cast.is_colliding():
-		var target = attack_range_cast.get_collider(0)
-		
-		if(target):
-			var is_bubble = target.get_meta("is_bubble", false)
-			if is_bubble:
-				var area = target as Area2D
-				area.get_parent().hit(base_attack_damage)
+
 
 func place() -> void:
 	add_collision()
@@ -58,6 +53,13 @@ func set_collision_status(is_colliding: bool):
 	
 	can_place = is_colliding
 	modulate = Color(color) 
+
+func _on_cooldown_timer_timeout() -> void:
+	if attack_range_cast && attack_range_cast.is_colliding():
+		var target = attack_range_cast.get_collider(0)
 	
-func create_projectile():
-	pass
+		if(target):
+			var is_bubble = target.get_meta("is_bubble", false)
+			if is_bubble:
+				var area = target as Area2D
+				area.get_parent().hit(base_attack_damage)
