@@ -1,7 +1,7 @@
 extends Node2D
 
-var health = 3
-var candy = 0
+@export var health = 3
+@export var candy = 0
 var wave_number = 1
 var is_game_over = false
 var health_label

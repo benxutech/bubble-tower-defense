@@ -19,6 +19,7 @@ content_margin_bottom = 8.0
 
 [node name="BaseMap" type="Node2D"]
 script = ExtResource("1_scobg")
+health = 20
 
 [node name="SpawnerPath" parent="." instance=ExtResource("4_2w5af")]
 position = Vector2(-16, 432)
