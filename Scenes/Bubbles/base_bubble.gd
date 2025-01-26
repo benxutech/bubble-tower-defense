@@ -33,6 +33,8 @@ func pop() -> void:
 		speed = 0
 		is_destroyed = true
 		$BubbleSprite.play("pop")
+		GlobalSignal.bubble_popped.emit()
+		
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_destroyed:

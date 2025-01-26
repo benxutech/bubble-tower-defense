@@ -11,11 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#offsetY = -BOB_SPEED if isUp else BOB_SPEED
-	if isUp:
-		offsetY -= BOB_SPEED
-	else:
-		offsetY += BOB_SPEED
+	offsetY += -BOB_SPEED if isUp else BOB_SPEED
 	offset = Vector2(0, offsetY)
 
 

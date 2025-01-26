@@ -7,8 +7,10 @@ var health_label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignal.damage_taken.connect(on_damage_taken)
+	GlobalSignal.bubble_popped.connect(on_bubble_popped)
 	GlobalSignal.change_spawner_status.emit(true)
-	health_label = get_node("VBoxContainer/HealthLabel")
+	health_label = $HpPanel/HSplitContainer/HealthLabel
+	
 
 func _input(event: InputEvent) -> void:
 	# TODO: remove false
@@ -40,6 +42,10 @@ func on_damage_taken(damage_point: int) -> void:
 	if health <= 0:
 		finish_map()
 		is_game_over = true
+		
+func on_bubble_popped() -> void:
+	if ($PopSound):
+		$PopSound.play()
 
 func finish_map() -> void:
 	GlobalSignal.change_spawner_status.emit(false)
