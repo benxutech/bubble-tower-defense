@@ -69,6 +69,8 @@ theme_override_constants/separation = 18
 
 [node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+dragger_visibility = 1
 
 [node name="CandyNumber" type="Label" parent="PanelContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
@@ -85,17 +87,22 @@ text = "10"
 icon = ExtResource("3_qkkda")
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "10"
 icon = ExtResource("3_qkkda")
 
 [node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "10"
 icon = ExtResource("3_qkkda")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+dragger_visibility = 1
 
 [node name="WaveLabel" type="Label" parent="PanelContainer/HSplitContainer"]
 layout_mode = 2
@@ -105,6 +112,11 @@ text = "Wave: "
 layout_mode = 2
 text = "0
 "
+
+[node name="CreateTowerUI" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.54902)
+texture = ExtResource("3_qkkda")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

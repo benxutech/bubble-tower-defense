@@ -3,19 +3,179 @@
 	{
 	  "wave_number": 1,
 	  "bubbles": [
-		{"type": "BaseBubble", "count": 5},
-		{"type": "YellowBubble", "count": 3}
+		{ "type": "BaseBubble", "count": 5 },
+		{ "type": "YellowBubble", "count": 3 }
 	  ],
 	  "spawn_interval": 2.0
 	},
 	{
 	  "wave_number": 2,
 	  "bubbles": [
-		{"type": "BaseBubble", "count": 7},
-		{"type": "YellowBubble", "count": 4},
-		{"type": "RedBubble", "count": 1}
+		{ "type": "BaseBubble", "count": 7 },
+		{ "type": "YellowBubble", "count": 5 }
+	  ],
+	  "spawn_interval": 1.8
+	},
+	{
+	  "wave_number": 3,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 10 },
+		{ "type": "YellowBubble", "count": 6 },
+		{ "type": "RedBubble", "count": 1 }
+	  ],
+	  "spawn_interval": 1.7
+	},
+	{
+	  "wave_number": 4,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 12 },
+		{ "type": "YellowBubble", "count": 8 },
+		{ "type": "RedBubble", "count": 3 }
+	  ],
+	  "spawn_interval": 1.6
+	},
+	{
+	  "wave_number": 5,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 10 },
+		{ "type": "RedBubble", "count": 5 }
 	  ],
 	  "spawn_interval": 1.5
+	},
+	{
+	  "wave_number": 6,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 15 },
+		{ "type": "YellowBubble", "count": 10 },
+		{ "type": "RedBubble", "count": 5 }
+	  ],
+	  "spawn_interval": 1.4
+	},
+	{
+	  "wave_number": 7,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 12 },
+		{ "type": "RedBubble", "count": 7 },
+		{ "type": "PurpleBubble", "count": 2 }
+	  ],
+	  "spawn_interval": 1.3
+	},
+	{
+	  "wave_number": 8,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 20 },
+		{ "type": "YellowBubble", "count": 15 },
+		{ "type": "RedBubble", "count": 8 },
+		{ "type": "PurpleBubble", "count": 3 }
+	  ],
+	  "spawn_interval": 1.3
+	},
+	{
+	  "wave_number": 9,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 20 },
+		{ "type": "RedBubble", "count": 10 },
+		{ "type": "PurpleBubble", "count": 5 }
+	  ],
+	  "spawn_interval": 1.2
+	},
+	{
+	  "wave_number": 10,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 15 },
+		{ "type": "RedBubble", "count": 10 },
+		{ "type": "PurpleBubble", "count": 7 }
+	  ],
+	  "spawn_interval": 1.2
+	},
+	{
+	  "wave_number": 11,
+	  "bubbles": [
+		{ "type": "RedBubble", "count": 15 },
+		{ "type": "PurpleBubble", "count": 10 }
+	  ],
+	  "spawn_interval": 1.1
+	},
+	{
+	  "wave_number": 12,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 10 },
+		{ "type": "YellowBubble", "count": 20 },
+		{ "type": "RedBubble", "count": 12 },
+		{ "type": "PurpleBubble", "count": 7 }
+	  ],
+	  "spawn_interval": 1.1
+	},
+	{
+	  "wave_number": 13,
+	  "bubbles": [
+		{ "type": "PurpleBubble", "count": 15 },
+		{ "type": "RedBubble", "count": 12 }
+	  ],
+	  "spawn_interval": 1.0
+	},
+	{
+	  "wave_number": 14,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 25 },
+		{ "type": "RedBubble", "count": 15 },
+		{ "type": "PurpleBubble", "count": 10 }
+	  ],
+	  "spawn_interval": 1.0
+	},
+	{
+	  "wave_number": 15,
+	  "bubbles": [
+		{ "type": "PurpleBubble", "count": 20 },
+		{ "type": "PinkBubble", "count": 5 }
+	  ],
+	  "spawn_interval": 0.9
+	},
+	{
+	  "wave_number": 16,
+	  "bubbles": [
+		{ "type": "BaseBubble", "count": 15 },
+		{ "type": "YellowBubble", "count": 20 },
+		{ "type": "RedBubble", "count": 15 },
+		{ "type": "PurpleBubble", "count": 10 },
+		{ "type": "PinkBubble", "count": 5 }
+	  ],
+	  "spawn_interval": 0.9
+	},
+	{
+	  "wave_number": 17,
+	  "bubbles": [
+		{ "type": "PurpleBubble", "count": 20 },
+		{ "type": "PinkBubble", "count": 10 }
+	  ],
+	  "spawn_interval": 0.8
+	},
+	{
+	  "wave_number": 18,
+	  "bubbles": [
+		{ "type": "YellowBubble", "count": 30 },
+		{ "type": "RedBubble", "count": 20 },
+		{ "type": "PurpleBubble", "count": 15 },
+		{ "type": "PinkBubble", "count": 10 }
+	  ],
+	  "spawn_interval": 0.8
+	},
+	{
+	  "wave_number": 19,
+	  "bubbles": [
+		{ "type": "PurpleBubble", "count": 25 },
+		{ "type": "PinkBubble", "count": 15 }
+	  ],
+	  "spawn_interval": 0.7
+	},
+	{
+	  "wave_number": 20,
+	  "bubbles": [
+		{ "type": "RedBubble", "count": 25 },
+		{ "type": "PurpleBubble", "count": 20 },
+		{ "type": "PinkBubble", "count": 15 }
+	  ],
+	  "spawn_interval": 0.7
 	}
   ]
 }
