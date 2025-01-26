@@ -6,22 +6,23 @@ var can_place = false
 @export var atack_range_radius = 100.0
 var attack_range_cast: ShapeCast2D
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if not is_placed:
 		set_collision_status($CollisionArea2D.has_overlapping_areas())
+	if is_placed:
+		if not $AnimationPlayer.is_playing():
+			$AnimationPlayer.play("attack")
 		
 func _physics_process(_delta: float) -> void:
 	if attack_range_cast && attack_range_cast.is_colliding():
-		print(attack_range_cast.get_collision_count())
 		if attack_range_cast.get_collider(0) is BaseBubble:
 			print("it is a bubble")
 
 func place() -> void:
 	add_collision()
 	add_range_attack()
-	#is_placed = true
+	is_placed = true
 
 func add_collision() -> void :
 	var circle = CircleShape2D.new()
@@ -46,3 +47,6 @@ func set_collision_status(is_colliding: bool):
 	
 	can_place = is_colliding
 	modulate = Color(color) 
+	
+func create_projectile():
+	pass
