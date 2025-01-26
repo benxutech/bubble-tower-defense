@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://8n10ri8g5d7p"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/ben_tower.gd" id="1_yordn"]
+[ext_resource type="Texture2D" uid="uid://uom6yg42l1ir" path="res://Assets/Tower/armpoke.png" id="2_58tha"]
+[ext_resource type="Texture2D" uid="uid://t076228ahugp" path="res://Assets/Tower/towertopdown.png" id="3_l8qge"]
+
+[sub_resource type="Animation" id="Animation_wcvu2"]
+resource_name = "new_animation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_jhcte"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpdbe"]
+_data = {
+"RESET": SubResource("Animation_jhcte"),
+"new_animation": SubResource("Animation_wcvu2")
+}
+
+[node name="BenTower" type="Node2D"]
+script = ExtResource("1_yordn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_58tha")
+centered = false
+offset = Vector2(-7, -2)
+hframes = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("3_l8qge")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jpdbe")
+}
