@@ -59,14 +59,14 @@ _data = {
 script = ExtResource("1_dgc5p")
 
 [node name="Arms" type="Sprite2D" parent="."]
-rotation = 1.5708
+rotation = -1.5708
 texture = ExtResource("2_81wnt")
 centered = false
 offset = Vector2(-7, -2)
 hframes = 3
 
 [node name="Body" type="Sprite2D" parent="."]
-rotation = 1.5708
+rotation = -1.5708
 texture = ExtResource("3_febxg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

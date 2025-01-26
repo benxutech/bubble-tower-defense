@@ -21,7 +21,6 @@ func _process(_delta: float) -> void:
 		if not $AnimationPlayer.is_playing():
 			$AnimationPlayer.play("attack")
 
-
 func place() -> void:
 	add_collision()
 	add_range_attack()
@@ -62,4 +61,9 @@ func _on_cooldown_timer_timeout() -> void:
 			var is_bubble = target.get_meta("is_bubble", false)
 			if is_bubble:
 				var area = target as Area2D
+				var direction = (area.global_position - global_position).normalized()
+
+				var angle = direction.angle()
+
+				rotation = angle
 				area.get_parent().hit(base_attack_damage)
