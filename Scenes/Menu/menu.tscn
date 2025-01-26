@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://cusmq1so44wm6"]
+[gd_scene load_steps=7 format=3 uid="uid://cusmq1so44wm6"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/menu.gd" id="1_mus75"]
+[ext_resource type="Texture2D" uid="uid://irnwwmfax1oa" path="res://Assets/dad.png" id="2_yfrnt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhb80"]
+atlas = ExtResource("2_yfrnt")
+region = Rect2(0, 0, 1000, 612)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkiia"]
+atlas = ExtResource("2_yfrnt")
+region = Rect2(1000, 0, 1000, 612)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mets8"]
+atlas = ExtResource("2_yfrnt")
+region = Rect2(2000, 0, 1000, 612)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxij5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhb80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkiia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mets8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mets8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mets8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_mus75")
@@ -24,5 +60,10 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Don't Play"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(502, 311)
+sprite_frames = SubResource("SpriteFrames_pxij5")
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

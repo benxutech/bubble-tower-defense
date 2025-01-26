@@ -16,4 +16,9 @@ func _on_button_exit_pressed():
 
 
 func _on_button_play_pressed():
+	$AnimatedSprite2D.play()
+	
+
+
+func _on_animated_sprite_2d_animation_finished():
 	get_tree().change_scene_to_file("res://Scenes/Maps/George's Map.tscn")
