@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var health = 3
+@export var health = 1
 @export var candy = 0
 var wave_number = 1
 var is_game_over = false
@@ -15,6 +15,7 @@ func _ready() -> void:
 	GlobalSignal.bubble_popped.connect(on_bubble_popped)
 	GlobalSignal.wave_update.connect(on_wave_update)
 	GlobalSignal.change_spawner_status.emit(true)
+	GlobalSignal.view_tower_data.connect(set_tower_view_data)
 	health_label = $HpPanel/HSplitContainer/HealthLabel
 	candy_label = $PanelContainer/VBoxContainer/HSplitContainer/CandyNumber
 	wave_label = $PanelContainer/HSplitContainer/WaveNumber
@@ -28,6 +29,10 @@ func render_tower_create_ui():
 func reset_tower_create_ui():
 	$CreateTowerUI.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func set_tower_view_data(tower):
+	print("clicked the tower")
+	print(tower.collision_radius)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

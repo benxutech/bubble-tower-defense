@@ -10,9 +10,16 @@ var can_place = false
 @export var base_attack_damage = 1
 var attack_range_cast: ShapeCast2D
 var can_attack = false
+var level = 1
+
+var tower_stats = TowerLevels.new().tower_stats[level - 1]
 
 func _ready() -> void:
-	$CooldownTimer.start(base_attack_cooldown_time_ms / 1000) # TODO: this method is not being called. Bug on spawn
+	$CooldownTimer.start(tower_stats.base_attack_cooldown_time_ms / 1000) # TODO: this method is not being called. Bug on spawn
+
+func update_tower_stats():
+	tower_stats = TowerLevels.new().tower_stats[level - 1]
+	$CooldownTimer.wait_time = tower_stats.base_attack_cooldown_time_ms / 1000
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -69,7 +76,7 @@ func add_range_attack() -> void:
 	attack_range_cast.collide_with_areas = true
 	attack_range_cast.shape = circle
 	attack_range_cast.add_exception_rid($CollisionArea2D)
-	circle.radius = attack_range_radius
+	circle.radius = tower_stats.attack_range_radius
 	
 	add_child(attack_range_cast)
 
@@ -82,3 +89,23 @@ func set_collision_status(is_colliding: bool):
 
 func _on_cooldown_timer_timeout() -> void:
 	can_attack = true
+	
+func _input(event) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed && is_mouse_over():
+			print('yep over')
+			GlobalSignal.view_tower_data.emit(self)
+			
+func level_up() -> void:
+	if level >= TowerLevels.new().tower_stats.size():
+		return
+	level += 1
+	update_tower_stats()
+	print(tower_stats)
+	print(level)
+	
+func is_mouse_over() -> bool:
+	var local_mouse_pos = get_local_mouse_position()
+	var rect = Rect2(Vector2(48, 48), $Body.texture.get_size())  # Adjust for node size
+	print(rect)
+	return rect.has_point(local_mouse_pos)

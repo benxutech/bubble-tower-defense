@@ -4,6 +4,7 @@ signal damage_taken
 signal change_spawner_status
 signal bubble_popped
 signal wave_update
+signal view_tower_data(data: Node2D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

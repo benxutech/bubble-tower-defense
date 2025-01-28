@@ -25,7 +25,8 @@ func start_new_wave() -> void:
 		for bubble_info in current_wave_data["bubbles"]:
 			add_bubbles_to_wave(bubble_info)
 		if $SpawnTimer:
-			$SpawnTimer.wait_time = 0.5 * current_wave_data.spawn_interval
+			$SpawnTimer.wait_time = 0.1
+			#$SpawnTimer.wait_time = 0.5 * current_wave_data.spawn_interval
 		
 func add_bubbles_to_wave(bubble_info: Dictionary) -> void:
 	var bubble_type = bubble_info["type"]
