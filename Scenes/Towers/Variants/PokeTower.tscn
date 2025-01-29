@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwkj7op7l2s18"]
+[gd_scene load_steps=2 format=3 uid="uid://c8nps7rr370ms"]
 
 [ext_resource type="PackedScene" uid="uid://cq3ji0nfn41qj" path="res://Scenes/Towers/BaseTower.tscn" id="1_tfita"]
 
