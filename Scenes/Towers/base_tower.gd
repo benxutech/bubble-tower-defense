@@ -11,14 +11,14 @@ var can_place = false
 var attack_range_cast: ShapeCast2D
 var can_attack = false
 var level = 1
-
-var tower_stats = TowerLevels.new().tower_stats[level - 1]
+var tower_levels = TowerLevels.new()
+var tower_stats = tower_levels.tower_stats[level - 1]
 
 func _ready() -> void:
-	$CooldownTimer.start(tower_stats.base_attack_cooldown_time_ms / 1000) # TODO: this method is not being called. Bug on spawn
+	$CooldownTimer.start(tower_stats.base_attack_cooldown_time_ms / 1000)
 
 func update_tower_stats():
-	tower_stats = TowerLevels.new().tower_stats[level - 1]
+	tower_stats = tower_levels.tower_stats[level - 1]
 	$CooldownTimer.wait_time = tower_stats.base_attack_cooldown_time_ms / 1000
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,13 +45,12 @@ func attack() -> void:
 		
 func get_bubble() -> BaseBubble:
 	if attack_range_cast and attack_range_cast.is_colliding():
-		var target = attack_range_cast.get_collider(0)
-
-		if target:
-			var is_bubble = target.get_meta("is_bubble", false)
+		for target_index in  range(attack_range_cast.get_collision_count()):
+			var target = attack_range_cast.get_collider(target_index)
+			var is_bubble = target.get_meta("is_bubble", false) if target else false
 			if is_bubble:
 				var area = target as Area2D
-				return area.get_parent() as BaseBubble  # Explicitly cast to BaseBubble
+				return area.get_parent() as BaseBubble
 			
 	return null
 
@@ -93,7 +92,6 @@ func _on_cooldown_timer_timeout() -> void:
 func _input(event) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed && is_mouse_over():
-			print('yep over')
 			GlobalSignal.view_tower_data.emit(self)
 			
 func level_up() -> void:
@@ -101,11 +99,8 @@ func level_up() -> void:
 		return
 	level += 1
 	update_tower_stats()
-	print(tower_stats)
-	print(level)
 	
 func is_mouse_over() -> bool:
 	var local_mouse_pos = get_local_mouse_position()
 	var rect = Rect2(Vector2(48, 48), $Body.texture.get_size())  # Adjust for node size
-	print(rect)
 	return rect.has_point(local_mouse_pos)
